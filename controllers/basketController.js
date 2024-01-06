@@ -27,6 +27,27 @@ class BasketController {
 
         return res.json(orders)
     }
+
+    async changeOrder (req, res){
+        const {orderId, adminNote, active, status} = req.body
+
+        const order = await Order.update(
+            {
+                adminNote: adminNote,
+                active: active,
+                status: status
+            },
+            {
+              where: {
+                id: orderId,
+              },
+            }
+          )
+
+
+        
+        return res.json(order)
+    }
     
     async delete (req, res){
        

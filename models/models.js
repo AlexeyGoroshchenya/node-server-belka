@@ -50,6 +50,8 @@ const Order = sequelize.define('order', {
     devices: {type: DataTypes.TEXT, allowNull: false},
     active: {type: DataTypes.BOOLEAN, defaultValue: true},
     note: {type: DataTypes.TEXT, allowNull: true},
+    adminNote: {type: DataTypes.TEXT, allowNull: true},
+    status: {type: DataTypes.STRING, allowNull: true},
 })
 
 
