@@ -1,5 +1,5 @@
 require('dotenv').config()
-const config_file = require("../config.json");
+const config_file = require("./config.json");
 const express = require('express')
 const sequelize = require('./db')
 const models = require('./models/models')
