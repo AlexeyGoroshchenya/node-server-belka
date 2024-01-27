@@ -1,7 +1,7 @@
 const {Sequelize} = require('sequelize')
 
 
-console.log(process.env.DB_PASSWORD);
+
 
 module.exports = new Sequelize("postgres://postgres:postgres@localhost/belka",
     // `${process.env.DB_NAME}`,
