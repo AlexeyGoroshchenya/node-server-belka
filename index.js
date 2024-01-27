@@ -1,4 +1,4 @@
-// require('dotenv').config()
+require('dotenv').config()
 const express = require('express')
 const sequelize = require('./db')
 const models = require('./models/models')
@@ -8,7 +8,7 @@ const path = require('path')
 const router = require('./routes/index')
 const errorHandler = require('./middleware/ErrorHandlingMiddleware')
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 7000
 
 const app = express()
 
