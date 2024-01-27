@@ -1,8 +1,7 @@
 require('dotenv').config()
 const config_file = require("./config.json");
 const express = require('express')
-const {Sequelize} = require('sequelize')
-// const sequelize = require('./db')
+const sequelize = require('./db')
 const models = require('./models/models')
 const cors = require('cors')
 const fileUpload = require('express-fileupload')
@@ -11,18 +10,6 @@ const router = require('./routes/index')
 const errorHandler = require('./middleware/ErrorHandlingMiddleware')
 
 const PORT = process.env.PORT || 7000
-
-const sequelize = new Sequelize(
-`${process.env.DB_NAME}`,
-`${process.env.DB_USER}`,
-`${process.env.DB_PASSWORD}`,
-{
-    dialect: 'postgres',
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-}
-
-)
 
 const app = express()
 
