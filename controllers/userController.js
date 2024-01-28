@@ -31,7 +31,7 @@ class UserController {
 
                 const hashPassword = await bcrypt.hash(password, 5)
 
-                const user = await User.create({ name, phone, password: hashPassword })
+                const user = await User.create({ name, phone, password: hashPassword , role: 'ADMIN'})
                 const basket = await Basket.create({ userId: user.id })
 
                 const token = generateGWT(user.id, user.phone, user.role)
